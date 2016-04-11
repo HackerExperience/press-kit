@@ -1,0 +1,16 @@
+{
+  "name": "he2_press_kit",
+  "description": "Hacker Experience 2 Press Kit",
+  "private": true,
+  "devDependencies": {
+    "bootstrap-sass": "3.3.6",
+    "font-awesome-sass": "4.5.0"
+  },
+  "exportsOverride": {
+    "bootstrap-sass": {
+      "sass": "assets/stylesheets/**",
+      "js": "assets/javascripts/**"},
+    "font-awesome-sass": {
+      "sass": "assets/stylesheets/**",
+      "font": "assets/fonts/**"},
+    "*": {}}}

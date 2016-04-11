@@ -1,0 +1,8 @@
+mixin stylesheet(href, media)
+  if media
+    link(rel="stylesheet" type="text/css" media= media href= href)&attributes(attributes)
+  else
+    link(rel="stylesheet" type="text/css" media="all" href= href)&attributes(attributes)
+
+mixin javascript(src)
+  script(type="text/javascript" src= src)&attributes(attributes)
