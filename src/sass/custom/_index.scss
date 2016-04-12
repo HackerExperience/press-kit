@@ -1,0 +1,169 @@
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.section {
+  margin: 5px 0 0 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+#videos {
+
+  .video-placeholder {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    min-height: 240px;
+    background: #333;
+    margin-bottom: 20px; 
+  }
+}
+
+#features {
+
+  .feature {
+    margin-top: 10px;
+
+    .feature-title {
+      background: #EEE;
+    }
+
+    .feature-desc {
+    }
+  }
+}
+
+#team {
+
+  .team-member {
+    margin-top: 20px;
+
+    .member-info {
+      min-height: 320px;
+      padding-left: 30px;
+
+      .member-name p {
+        padding: 5px 0 0 0;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .member-role p {
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        color: #777;
+      }
+
+      .member-bio {
+
+        p {
+          margin: 10px 0 0 0;
+
+          &:first-child {
+            margin: 15px 0 0 0;
+          }
+        }
+      }
+
+      .member-social {
+        position: absolute;
+        bottom: 10px;
+        padding-top: 20px;
+
+        a {
+          outline: 0;
+          text-decoration: none;
+          margin-right: 20px;
+          color: #777;
+
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+
+    .img-placeholder {  
+      display: block;
+      height: 320px;
+      width: 320px;
+      background-color: #333;
+    }
+  }
+}
+
+#contact {
+
+  a {
+    outline: 0;
+    display: block;
+    text-decoration: none;
+    color: #444;
+
+    &:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+
+  .socialite {
+
+    a {
+      display: inline;
+      margin-right: 20px;
+      color: #777;
+
+
+      &:hover {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#facts {
+  margin-top: 50px;
+  background: #DDD;
+  min-height: 800px;
+
+  .fact-label {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #F00;
+  }
+
+  .fact-table {
+    margin: 20px 10px 0 10px;
+    text-align: center;
+
+
+    .fact-title {      
+      font-weight: bold;
+      color: #222;
+    }
+
+    .fact-desc {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .fact-social {
+      a {
+        display: inline;
+        margin: 0 3px;
+        color: #777;
+
+        &:hover {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
