@@ -2,34 +2,3 @@
  * Custom CSS for HE2 Indiegogo campaign
  * Copyright 2016 NeoArt Labs LLC
  */
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-#header {
-  background-color: #F4F7F8;
-}
-
-#footer {
-  background-color: #FFC0CB;
-}
-
-h1, 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #4D4E53;
-  font-family: Helvetica;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-span,
-p {
-  color: #4D4E53; //mesma cor da mdn
-  font-family: Lucida;
-  font-size: 14px;
-}

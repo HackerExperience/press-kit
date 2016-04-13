@@ -1,6 +1,6 @@
-block variables
-
 include metatags
+
+block variables
 
 doctype html
 html(lang="en")
@@ -10,7 +10,7 @@ html(lang="en")
 
     block styles
       if env == "prod"
-        +stylesheet("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Quantico:400")
+        +stylesheet("https://fonts.googleapis.com/css?family=Open+Sans:400,700")
       +stylesheet("assets/css/vendor.css")
       +stylesheet("assets/css/custom.css")
 
@@ -23,10 +23,3 @@ html(lang="en")
     include footer
 
     block scripts
-      if env == "prod"
-        +javascript("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
-        +javascript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
-      else
-        +javascript("assets/js/vendor/jquery.js")
-        +javascript("assets/js/vendor/bootstrap.js")
-      +javascript("assets/js/custom.js")

@@ -8,9 +8,10 @@
   },
   "exportsOverride": {
     "bootstrap-sass": {
-      "sass": "assets/stylesheets/**",
-      "js": "assets/javascripts/**"},
+      "sass": "assets/stylesheets/**"
+    },
     "font-awesome-sass": {
       "sass": "assets/stylesheets/**",
-      "font": "assets/fonts/**"},
+      "font": "assets/fonts/**"
+    },
     "*": {}}}

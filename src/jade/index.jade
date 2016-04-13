@@ -1,58 +1,42 @@
 extends includes/layout
 
-mixin title(title)
-  .title
-    if block
-      block
-    else
-      =title
-
-mixin section(section)
-  p.section
-    if block
-      block
-    else
-      =section
-
-mixin text(text)
-  p.text
-    if block
-      block
-    else
-      =text
-
 block content
   //- Intro
   .container
     .col-xs-8
       .row
         .col-xs-12
-          +title("The game")
+          .title The game
 
-          +text
+          p.text
             | Hacker Experience 2 is an 
             strong open source real time hacking simulation
-            | . Players get the chance to experience the life of a hacker living in a dystopian world controlled by megacorporations.
+            | . Players get the chance to experience the life of a hacker living
+            | in a dystopian world controlled by megacorporations.
 
-          +text
+          p.text
             | The game brings 
             strong location-based strategy 
             | to a 
             strong persistent virtual open world 
-            | undergoing a digital war. With their mobile phones, players can conquer territories and hunt nearby hackers.
+            | undergoing a digital war. With their mobile phones, players can
+            | conquer territories and hunt nearby hackers.
 
-          +text
-            | The virtual reality of this cyberpunk world gets blurred when real-world entities can be interacted within the game. Players can hack nearby hotels, business, banks, parks, schools and even simulated citizens.
+          p.text
+            | The virtual reality of this cyberpunk world gets blurred when
+            | real-world entities can be interacted within the game. Players can
+            | hack nearby hotels, business, banks, parks, schools and even
+            | simulated citizens.
 
       .row
         #videos.col-xs-6
-          +title("See it in action")
+          .title See it in action
           .video-placeholder
 
-          +title("Pitch")
+          .title Pitch
           .video-placeholder
         #features.col-xs-6
-          +title("Key features")
+          .title Key features
 
           .feature
             p.feature-title
@@ -86,76 +70,96 @@ block content
 
       .row
         .col-xs-12
-          +title("Objectives & Principles")
+          .title Objectives &amp; Principles
 
-          +text
+          p.text
             | The people behind Hacker Experience have a not-so-secret agenda. 
             a(href="#") See the full list.
 
-          +section("Computer Science education")
+          p.section Computer Science education
 
-          +text
-            | We want to spread Computer Science education to young students around the world, with the ultimate goal of getting them interested in Computer Science. 
+          p.text
+            | We want to spread Computer Science education to young students
+            | around the world, with the ultimate goal of getting them
+            | interested in Computer Science. 
 
-          +text
-            | By playing the game, non-technical players will learn concepts of computer networks, operating systems and security. We want them to know about VPN, HTTPS and encryption to protect their privacy.
+          p.text
+            | By playing the game, non-technical players will learn concepts of
+            | computer networks, operating systems and security. We want them to
+            | know about VPN, HTTPS and encryption to protect their privacy.
 
-          +text
-            | Outside the game, we aim to motivate non-technical players and students to contribute to open-source projects for the first time.
+          p.text
+            | Outside the game, we aim to motivate non-technical players and
+            | students to contribute to open-source projects for the first time.
 
-          +section("Demystifying open source")
+          p.section Demystifying open source
 
-          +text
-            | Contributing to a project tends to be hard and intimidating, specially for first-time contributors. It also tends to be exclusive to programmers or geeks. We want to change this reality.
+          p.text
+            | Contributing to a project tends to be hard and intimidating,
+            | specially for first-time contributors. It also tends to be
+            | exclusive to programmers or geeks. We want to change this reality.
 
-          +section("A game for everyone")
+          p.section A game for everyone
 
-          +text
-            | We want to create a game for everyone, including those with disabilities. With help from the community, we plan to develop special interfaces crafted for them. 
+          p.text
+            | We want to create a game for everyone, including those with
+            | disabilities. With help from the community, we plan to develop
+            | special interfaces crafted for them. 
 
-          +text
+          p.text
             | Ultimately, we want to give people like 
             a(href="http://www.mirror.co.uk/news/uk-news/boy-11-says-first-words-96160") Jemil 
             | and 
             a(href="http://www.bbc.com/news/disability-35705489") James 
             | the chance to play a game made for them. 
 
-          +title("Development")
+          .title Development
 
-          +section("Free and open source software")
+          p.section Free and open source software
 
-          +text
-            | Hacker Experience 2 is a free and open source software being developed openly. This means the entire codebase that powers HE2 is public. Users have the freedom to run, copy, distribute, study, change and improve the software.
+          p.text
+            | Hacker Experience 2 is a free and open source software being
+            | developed openly. This means the entire codebase that powers HE2
+            | is public. Users have the freedom to run, copy, distribute, study,
+            | change and improve the software.
 
-          +section("Let's build a game")
+          p.section Let's build a game
 
-          +text
-            | We welcome players and students to contribute to Hacker Experience 2. It's also a great opportunity for them to take the first step on programming.
+          p.text
+            | We welcome players and students to contribute to Hacker Experience
+            | 2. It's also a great opportunity for them to take the first step
+            | on programming.
 
-
-          +text
+          p.text
             | Having the opportunity to 
             strong submit a small improvement 
-            | to a game that person actually plays can have a tremendous effect. Seeing the change being rolled out to others brings a great feeling that, we hope, will motivate further contributions.
+            | to a game that person actually plays can have a tremendous effect.
+            | Seeing the change being rolled out to others brings a great
+            | feeling that, we hope, will motivate further contributions.
 
-          +text
+          p.text
             | We believe this 
             strong practical experience 
-            | will get more students interested in Computer Science, computer programming and open source projects. 
+            | will get more students interested in Computer Science, computer
+            | programming and open source projects. 
 
-          +title("History")
+          .title History
 
-          +text
+          p.text
             | Hacker Experience 2 is based on 
             a(href="https://legacy.hackerexperience.com") Hacker Experience 1 (HE1)
-            | , released on September 2014. It currently has around 500,000 players and an overall positive review.
+            | , released on September 2014. It currently has around 500,000
+            | players and an overall positive review.
 
-          +text
-            | However, HE1 is Renato's first work, built while he was in college, and has several design flaws. It also has a simple text-based interface. Hacker Experience 2 was built to solve these issues and provide an even better game.
+          p.text
+            | However, HE1 is Renato's first work, built while he was in
+            | college, and has several design flaws. It also has a simple
+            | text-based interface. Hacker Experience 2 was built to solve these
+            | issues and provide an even better game.
 
   
       #team
-        +title("Team Members")
+        .title Team Members
 
         .row.team-member
           .col-xs-5
@@ -165,7 +169,7 @@ block content
             .member-name: p.
               Renato Massaro
             .member-role: p.
-              CTO & Developer
+              CTO &amp; Developer
             .member-bio
               p.
                 Creator of the Hacker Experience brand, Renato is a software developer and systems administrator.
@@ -235,7 +239,7 @@ block content
 
       .row
         .col-xs-12
-          +title("Featured in")
+          .title Featured in
 
         //- Indiegogo
         //- HN
@@ -247,25 +251,25 @@ block content
 
       .row
         .col-xs-12
-          +title("Assets")
+          .title Assets
 
       .row#contact
         .col-xs-6.links
 
-          +title("Contact")
+          .title Contact
 
           a(href="#") contact@hackerexperience.com
           a(href="tel:18444225953" title="Toll free") 1 844-HACKEREXP
           | 105 N First St #429 - San Jose, CA
 
-          +section("Media enquiries")
+          p.section Media enquiries
           a(href="#") press@hackerexperience.com
           a(href="tel:18444225953" title="Toll free") 1 844-HACKEREXP
           a(href="tel:14158004943") 1 415-800-4943
 
         .col-xs-6
 
-          +section("Links")
+          p.section Links
 
           .links
             a(href="https://hackerexperience.com") Official website
@@ -273,7 +277,7 @@ block content
             a(href="https://letsbuildagame.org") Let's build a game
             a(href="#") Crowdfunding campaign
 
-          +section("Social")
+          p.section Social
 
           .socialite
             a(href="#")

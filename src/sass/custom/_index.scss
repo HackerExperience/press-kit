@@ -4,40 +4,34 @@
 }
 
 .section {
-  margin: 5px 0 0 0;
+  color: #000;
   font-size: 16px;
   font-weight: bold;
-  color: #000;
+  margin: 5px 0 0;
 }
 
 #videos {
-
   .video-placeholder {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    min-height: 240px;
     background: #333;
-    margin-bottom: 20px; 
+    display: block;
+    height: auto;
+    margin-bottom: 20px;
+    max-width: 100%;
+    min-height: 240px;
   }
 }
 
 #features {
-
   .feature {
     margin-top: 10px;
 
     .feature-title {
       background: #EEE;
     }
-
-    .feature-desc {
-    }
   }
 }
 
 #team {
-
   .team-member {
     margin-top: 20px;
 
@@ -46,39 +40,38 @@
       padding-left: 30px;
 
       .member-name p {
-        padding: 5px 0 0 0;
-        margin: 0;
         font-weight: bold;
+        margin: 0;
+        padding: 5px 0 0;
       }
 
       .member-role p {
-        padding: 0;
-        margin: 0;
-        font-size: 12px;
         color: #777;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
       }
 
       .member-bio {
-
         p {
-          margin: 10px 0 0 0;
+          margin: 10px 0 0;
 
           &:first-child {
-            margin: 15px 0 0 0;
+            margin: 15px 0 0;
           }
         }
       }
 
       .member-social {
-        position: absolute;
         bottom: 10px;
         padding-top: 20px;
+        position: absolute;
 
         a {
+          color: #777;
+          margin-right: 20px;
           outline: 0;
           text-decoration: none;
-          margin-right: 20px;
-          color: #777;
 
           &:hover {
             color: #000;
@@ -87,22 +80,21 @@
       }
     }
 
-    .img-placeholder {  
+    .img-placeholder {
+      background-color: #333;
       display: block;
       height: 320px;
       width: 320px;
-      background-color: #333;
     }
   }
 }
 
 #contact {
-
   a {
-    outline: 0;
-    display: block;
-    text-decoration: none;
     color: #444;
+    display: block;
+    outline: 0;
+    text-decoration: none;
 
     &:hover {
       color: #000;
@@ -111,12 +103,10 @@
   }
 
   .socialite {
-
     a {
+      color: #777;
       display: inline;
       margin-right: 20px;
-      color: #777;
-
 
       &:hover {
         color: #000;
@@ -127,25 +117,24 @@
 }
 
 #facts {
-  margin-top: 50px;
   background: #DDD;
+  margin-top: 50px;
   min-height: 800px;
 
   .fact-label {
-    text-align: center;
+    color: #F00;
     font-size: 24px;
     font-weight: bold;
-    color: #F00;
+    text-align: center;
   }
 
   .fact-table {
-    margin: 20px 10px 0 10px;
+    margin: 20px 10px 0;
     text-align: center;
 
-
-    .fact-title {      
-      font-weight: bold;
+    .fact-title {
       color: #222;
+      font-weight: bold;
     }
 
     .fact-desc {
@@ -155,9 +144,9 @@
 
     .fact-social {
       a {
+        color: #777;
         display: inline;
         margin: 0 3px;
-        color: #777;
 
         &:hover {
           color: #000;
