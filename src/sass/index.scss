@@ -52,58 +52,57 @@ p strong {
 
 #team {
   .team-member {
-    margin-top: 20px;
+    display: flex;
+    margin: 20px 0 0;
+    width: 100%;
 
-    .member-info {
-      min-height: 320px;
-      padding-left: 30px;
+    .profile-img {
+      flex: 1;
+      max-width: 33%;
 
-      .member-name p {
-        font-weight: bold;
-        margin: 0;
-        padding: 5px 0 0;
-      }
-
-      .member-role p {
-        color: #777;
-        font-size: 12px;
-        margin: 0;
-        padding: 0;
-      }
-
-      .member-bio {
-        p {
-          margin: 10px 0 0;
-
-          &:first-child {
-            margin: 15px 0 0;
-          }
-        }
-      }
-
-      .member-social {
-        bottom: 10px;
-        padding-top: 20px;
-        position: absolute;
-
-        a {
-          color: #777;
-          margin-right: 20px;
-          outline: 0;
-          text-decoration: none;
-
-          &:hover {
-            color: #000;
-          }
-        }
+      img {
+        @include single-box-shadow(0, 0, 4px, 0, rgba(#000, 0.5));
+        border-radius: 16px;
       }
     }
 
-    .img-placeholder {
-      background-color: #333;
+    .profile-bio {
+      flex: 1;
+      padding: 0 8px 0 16px;
+    }
+
+    .member-name {
+      font-size: 1.45em;
+      line-height: 0.75;
+      padding-bottom: 3px;
+    }
+
+    .member-role {
+      border-bottom: 1px solid rgba($cooltrast, 0.66);
+      box-shadow: 0 4px 6px -4px rgba(#000, 0.33);
       display: block;
-      height: 320px;
-      width: 320px;
+      margin-bottom: 2px;
+      padding-bottom: 2px;
+    }
+
+    .member-bio {
+      font-size: 0.9em;
+      padding: 3px 0;
+
+      p::first-letter {
+        font-size: 1.15em;
+        margin-right: 1px;
+      }
+    }
+
+    .member-social {
+      text-align: center;
+
+      a {
+        @include single-text-shadow(1px, 1px, 0, 0, #333);
+        font-size: 1.8em;
+        text-decoration: none;
+      }
     }
   }
 }
