@@ -1,3 +1,8 @@
+/*!
+ * Custom CSS for HE2 Indiegogo campaign
+ * Copyright 2016 NeoArt Labs LLC
+ */
+
 // Bootstrap partials
 @import "bootstrap/bootstrap/variables";
 
@@ -6,6 +11,3 @@
 @import "variables";
 
 @import "custom/generic";
-
-// not sure how to make page-specific include
-@import "custom/index";
