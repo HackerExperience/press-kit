@@ -3,6 +3,11 @@
 //
 $cooltrast: #512888;
 
+$font-default: "Open Sans", "Helvetica",  sans-serif;
+
+// Font family to use only on h1 & h2
+$font-heading: "Raleway", $font-default;
+
 //
 // BOOTSTRAP OVERRIDE
 //
@@ -10,7 +15,7 @@ $text-color: #4D4E53;
 
 $link-color: desaturate($cooltrast, 15%);
 
-$font-family-sans-serif: "Open Sans", "Helvetica",  sans-serif;
+$font-family-sans-serif: $font-default;
 $font-family-base: $font-family-sans-serif;
 
 $font-size-base: 16px;
@@ -18,3 +23,5 @@ $font-size-base: 16px;
 $font-size-h1: floor(($font-size-base * 2.15));
 $font-size-h2: $font-size-h1;
 $font-size-h3: floor(($font-size-base * 1.5));
+
+$headings-font-weight: 400;

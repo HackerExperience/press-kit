@@ -20,12 +20,27 @@ main > .container {
   > .container {
     background: #FFF;
     max-width: 640px;
+    padding-bottom: 8px;
   }
 }
 
 p strong {
   @include single-text-shadow(1px, 1px, 0, 0, rgba(#333, 0.333));
   color: lighten($text-color, 5%);
+}
+
+%cool-divider {
+  @include single-box-shadow(0, 4px, 6px, -4px, rgba(#000, 0.33));
+  border-bottom: 1px solid rgba($cooltrast, 0.66);
+  display: block;
+}
+
+h1,
+h2 {
+  @extend %cool-divider;
+  font-family: $font-heading;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
 }
 
 #videos {
@@ -78,9 +93,7 @@ p strong {
     }
 
     .member-role {
-      border-bottom: 1px solid rgba($cooltrast, 0.66);
-      box-shadow: 0 4px 6px -4px rgba(#000, 0.33);
-      display: block;
+      @extend %cool-divider;
       margin-bottom: 2px;
       padding-bottom: 2px;
     }
@@ -99,7 +112,7 @@ p strong {
       text-align: center;
 
       a {
-        @include single-text-shadow(1px, 1px, 0, 0, #333);
+        @include single-text-shadow(1px, 1px, 0, 0, rgba(#333, 0.5));
         font-size: 1.8em;
         text-decoration: none;
       }
@@ -108,27 +121,20 @@ p strong {
 }
 
 #contact {
-  a {
-    color: #444;
-    display: block;
-    outline: 0;
-    text-decoration: none;
-
-    &:hover {
-      color: #000;
-      text-decoration: underline;
-    }
+  ul {
+    list-style: none;
+    padding-left: 8px;
   }
 
   .socialite {
     a {
+      @include single-text-shadow(1px, 1px, 0, 0, rgba(#333, 0.5));
       color: #777;
-      display: inline;
-      margin-right: 20px;
+      margin: 8px;
+      text-decoration: none;
 
       &:hover {
-        color: #000;
-        text-decoration: none;
+        color: $cooltrast;
       }
     }
   }
@@ -162,7 +168,7 @@ p strong {
       margin: 0 3px;
 
       a {
-        @include single-text-shadow(1px, 1px, 0, 0, #333);
+        @include single-text-shadow(1px, 1px, 0, 0, rgba(#333, 0.5));
       }
     }
   }
