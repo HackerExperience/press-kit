@@ -1,14 +1,31 @@
+@import "bootstrap/bootstrap/variables";
+
+@import "compass";
+
+@import "variables";
+
 /*!
  * Custom CSS for HE2 Indiegogo campaign
  * Copyright 2016 NeoArt Labs LLC
  */
-.container {
-  max-width: 640px;
+body {
+  background-attachment: fixed;
+  background-image: url("http://s1.picswalls.com/wallpapers/2015/11/22/cyberpunk-wallpaper_102105675_292.jpg");
+  background-size: cover;
 }
 
-.title {
-  font-size: 24px;
-  font-weight: bold;
+main > .container {
+  position: relative;
+
+  > .container {
+    background: #FFF;
+    max-width: 640px;
+  }
+}
+
+p strong {
+  @include single-text-shadow(1px, 1px, 0, 0, rgba(#333, 0.333));
+  color: lighten($text-color, 5%);
 }
 
 #videos {
@@ -27,7 +44,8 @@
     margin-top: 10px;
 
     .feature-title {
-      background: #EEE;
+      margin: 4px 0;
+      padding: 3px 0;
     }
   }
 }
@@ -118,42 +136,39 @@
 }
 
 #facts {
-  background: #DDD;
-  margin-top: 50px;
-  min-height: 800px;
+  background: rgba(#E6E6E6, 0.85);
+  background-image: image-url("farmer.png");
+  margin: 16px 0;
+  max-width: 320px;
+  padding: 8px 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
 
-  .fact-label {
-    color: #F00;
-    font-size: 24px;
-    font-weight: bold;
+  @media (max-width: $screen-md-max) {
+    display: none;
+  }
+
+  h1 {
+    margin: 4px 0;
     text-align: center;
   }
 
-  .fact-table {
-    margin: 20px 10px 0;
-    text-align: center;
+  ul {
+    list-style-type: none;
+    padding: 0;
 
-    .fact-title {
-      color: #222;
-      font-weight: bold;
-    }
+    &.buttons li {
+      display: inline-block;
+      margin: 0 3px;
 
-    .fact-desc {
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    .fact-social {
       a {
-        color: #777;
-        display: inline;
-        margin: 0 3px;
-
-        &:hover {
-          color: #000;
-          text-decoration: none;
-        }
+        @include single-text-shadow(1px, 1px, 0, 0, #333);
       }
     }
+  }
+
+  .fact {
+    margin: 10px 0;
   }
 }

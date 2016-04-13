@@ -4,7 +4,8 @@
   "private": true,
   "devDependencies": {
     "bootstrap-sass": "3.3.6",
-    "font-awesome-sass": "4.5.0"
+    "font-awesome-sass": "4.5.0",
+    "jquery": "2.2.0"
   },
   "exportsOverride": {
     "bootstrap-sass": {
@@ -13,5 +14,8 @@
     "font-awesome-sass": {
       "sass": "assets/stylesheets/**",
       "font": "assets/fonts/**"
+    },
+    "jquery": {
+      "js": "dist/jquery.min.js"
     },
     "*": {}}}

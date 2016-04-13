@@ -23,3 +23,7 @@ html(lang="en")
     include footer
 
     block scripts
+      if env == "prod"
+        +javascript("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+      else
+        +javascript("/assets/js/vendor/jquery.min.js")

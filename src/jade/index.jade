@@ -1,221 +1,231 @@
 extends includes/layout
+include includes/metatags
 
 append styles
-  include includes/metatags
   +stylesheet("/assets/css/index.css")
 
+append scripts
+  +javascript("/assets/js/index.js")
+
 block content
-  //- Intro
+  //- The first container is the real page container (used to adequate the page
+  //- real size to a bootstrap-like page). The nested container is a container
+  //- with a different maximum width to allow us to reduce the page width while
+  //- still having a container with it's real max size
   .container
-    #the-game
-      h1 The game
-      p
-        | Hacker Experience 2 is an 
-        strong open source real time hacking simulation
-        | . Players get the chance to experience the life of a hacker living
-        | in a dystopian world controlled by megacorporations.
-      p
-        | The game brings 
-        strong location-based strategy 
-        | to a 
-        strong persistent virtual open world 
-        | undergoing a digital war. With their mobile phones, players can
-        | conquer territories and hunt nearby hackers.
-      p
-        | The virtual reality of this cyberpunk world gets blurred when
-        | real-world entities can be interacted within the game. Players can
-        | hack nearby hotels, business, banks, parks, schools and even
-        | simulated citizens.
+    #facts
+      include includes/index/fact_sheet
+    .container
+      #the-game
+        //- Intro
+        h1 The game
+        p
+          | Hacker Experience 2 is an 
+          strong open source real time hacking simulation
+          | . Players get the chance to experience the life of a hacker living
+          | in a dystopian world controlled by megacorporations.
+        p
+          | The game brings 
+          strong location-based strategy 
+          | to a 
+          strong persistent virtual open world 
+          | undergoing a digital war. With their mobile phones, players can
+          | conquer territories and hunt nearby hackers.
+        p
+          | The virtual reality of this cyberpunk world gets blurred when
+          | real-world entities can be interacted within the game. Players can
+          | hack nearby hotels, business, banks, parks, schools and even
+          | simulated citizens.
 
-    #features
-      h2 Key features
+      #features
+        h2 Key features
 
-      .feature
-        h3.feature-title Dominate your city
-        .feature-desc
-          p
-            | Gather influence over your block, city or country. Claim your
-            | territory and guard it against hackers and rival factions. 
-
-      .feature
-        h3.feature-title Mind-blowing missions
-        .feature-desc
-          p
-            | Execute dirty jobs for the megacorps. Join lonewolf or team missions
-            | of data leaks, industrial espionage, sabotage, framing or CTF.
-            | Enjoy a wide variety of missions.
-
-      .feature
-        h3.feature-title Join a faction
-        .feature-desc
-          p
-            | Form alliances with people that share your objectives. Work
-            | together and deploy your own team strategy. Engage in exciting
-            | faction wars to conquer new territories. 
-
-      .feature
-        h3.feature-title Deploy your strategy
-        .feature-desc
-          p
-            | Attack all the way, fortify yourself and counter-attack or be
-            | stealthy and cover your tracks. Your strategy tailors your gameplay,
-            | making it an unique experience. 
-
-      .feature
-        h3.feature-title Learn while playing
-        .feature-desc
-          p
-            | Learn about computers, networks and operating systems. Get familiar
-            | with VPN, encryption and security concepts. You will never trust an
-            | insecure connection again. 
-
-    #objectives
-      h2 Objectives &amp; Principles
-      p
-        | The people behind Hacker Experience have a not-so-secret agenda. 
-        a(href="#") See the full list.
-
-      h3 Computer Science education
-      p
-        | We want to spread Computer Science education to young students
-        | around the world, with the ultimate goal of getting them
-        | interested in Computer Science.
-      p
-        | By playing the game, non-technical players will learn concepts of
-        | computer networks, operating systems and security. We want them to
-        | know about VPN, HTTPS and encryption to protect their privacy.
-      p
-        | Outside the game, we aim to motivate non-technical players and
-        | students to contribute to open-source projects for the first time.
-
-      h3 Demystifying open source
-      p
-        | Contributing to a project tends to be hard and intimidating,
-        | specially for first-time contributors. It also tends to be
-        | exclusive to programmers or geeks. We want to change this reality.
-
-      h3 A game for everyone
-      p
-        | We want to create a game for everyone, including those with
-        | disabilities. With help from the community, we plan to develop
-        | special interfaces crafted for them. 
-      p
-        | Ultimately, we want to give people like 
-        a(href="http://www.mirror.co.uk/news/uk-news/boy-11-says-first-words-96160") Jemil 
-        | and 
-        a(href="http://www.bbc.com/news/disability-35705489") James 
-        | the chance to play a game made for them. 
-
-    #development
-      h2 Development
-
-      h3 Free and open source software
-      p
-        | Hacker Experience 2 is a free and open source software being
-        | developed openly. This means the entire codebase that powers HE2
-        | is public. Users have the freedom to run, copy, distribute, study,
-        | change and improve the software.
-
-      h3 Let's build a game
-      p
-        | We welcome players and students to contribute to Hacker Experience
-        | 2. It's also a great opportunity for them to take the first step
-        | on programming.
-      p
-        | Having the opportunity to 
-        strong submit a small improvement 
-        | to a game that person actually plays can have a tremendous effect.
-        | Seeing the change being rolled out to others brings a great
-        | feeling that, we hope, will motivate further contributions.
-      p
-        | We believe this 
-        strong practical experience 
-        | will get more students interested in Computer Science, computer
-        | programming and open source projects. 
-
-    #history
-      h2 History
-      p
-        | Hacker Experience 2 is based on 
-        a(href="https://legacy.hackerexperience.com") Hacker Experience 1 (HE1)
-        | , released on September 2014. It currently has around 500,000
-        | players and an overall positive review.
-      p
-        | However, HE1 is Renato's first work, built while he was in
-        | college, and has several design flaws. It also has a simple
-        | text-based interface. Hacker Experience 2 was built to solve these
-        | issues and provide an even better game.
-
-    #team
-      h2 Team Members
-      
-      .team-member
-        .profile-img
-          img().img-responsive
-        .profile-bio
-          .member-name Renato Massaro
-          .member-role CTO &amp; Developer
-          .member-bio
+        .feature
+          h3.feature-title Dominate your city
+          .feature-desc
             p
-              | Creator of the Hacker Experience brand, Renato is a software
-              | developer and systems administrator.
-            p.
-              | At work and on his free time, Renato loves messing around with
-              | distributed systems, operational systems, databases and
-              | theoretical computer science. 
+              | Gather influence over your block, city or country. Claim your
+              | territory and guard it against hackers and rival factions. 
+
+        .feature
+          h3.feature-title Mind-blowing missions
+          .feature-desc
             p
-              | He is also a free software enthusiast and has spoken on some
-              | conferences in Brazil, including 
-              em Campus Party Brasil 
-              | and 
-              em Fórum Internacional de Software Livre
-              | .
-          .member-social
-            a(href="mailto:renato@hackerexperience.com")
-              .fa.fa-envelope.fa-2x
-            a(href="tel:+14158004943")
-              .fa.fa-phone.fa-2x
-            a(href="https://r.ena.to")
-              .fa.fa-user.fa-2x
-            a(href="https://fb.com/renato.massaro")
-              .fa.fa-facebook-square.fa-2x
-            a(href="https://twitter.com/RenatoMassaro")
-              .fa.fa-twitter.fa-2x
-    #featured
-      h2 Featured in
-      
-    #assets
-      h2 Assets
-      
-    #contact
-      h2 Contact us
-      .row
-        .col-xs-6.links
-          h3 General
-          a(href="#") contact@hackerexperience.com
-          a(href="tel:18444225953" title="Toll free") 1 844-HACKEREXP
-          | 105 N First St #429 - San Jose, CA
+              | Execute dirty jobs for the megacorps. Join lonewolf or team missions
+              | of data leaks, industrial espionage, sabotage, framing or CTF.
+              | Enjoy a wide variety of missions.
 
-          h3 Media enquiries
-          a(href="#") press@hackerexperience.com
-          a(href="tel:18444225953" title="Toll free") 1 844-HACKEREXP
-          a(href="tel:14158004943") 1 415-800-4943
+        .feature
+          h3.feature-title Join a faction
+          .feature-desc
+            p
+              | Form alliances with people that share your objectives. Work
+              | together and deploy your own team strategy. Engage in exciting
+              | faction wars to conquer new territories. 
 
-        .col-xs-6
-          h3 Links
-          .links
-            a(href="https://hackerexperience.com") Official website
-            a(href="https://leaks.hackerexperience.com") Blog
-            a(href="https://letsbuildagame.org") Let's build a game
-            a(href="#") Crowdfunding campaign
+        .feature
+          h3.feature-title Deploy your strategy
+          .feature-desc
+            p
+              | Attack all the way, fortify yourself and counter-attack or be
+              | stealthy and cover your tracks. Your strategy tailors your gameplay,
+              | making it an unique experience. 
 
-          h3 Social
-          .socialite
-            a(href="#")
-              .fa.fa-facebook-square.fa-3x
-            a(href="#")
-              .fa.fa-twitter.fa-3x
-            a(href="#")
-              .fa.fa-google-plus.fa-3x
-            a(href="#")
-              .fa.fa-github.fa-3x
+        .feature
+          h3.feature-title Learn while playing
+          .feature-desc
+            p
+              | Learn about computers, networks and operating systems. Get familiar
+              | with VPN, encryption and security concepts. You will never trust an
+              | insecure connection again. 
+
+      #objectives
+        h2 Objectives &amp; Principles
+        p
+          | The people behind Hacker Experience have a not-so-secret agenda. 
+          a(href="#") See the full list.
+
+        h3 Computer Science education
+        p
+          | We want to spread Computer Science education to young students
+          | around the world, with the ultimate goal of getting them
+          | interested in Computer Science.
+        p
+          | By playing the game, non-technical players will learn concepts of
+          | computer networks, operating systems and security. We want them to
+          | know about VPN, HTTPS and encryption to protect their privacy.
+        p
+          | Outside the game, we aim to motivate non-technical players and
+          | students to contribute to open-source projects for the first time.
+
+        h3 Demystifying open source
+        p
+          | Contributing to a project tends to be hard and intimidating,
+          | specially for first-time contributors. It also tends to be
+          | exclusive to programmers or geeks. We want to change this reality.
+
+        h3 A game for everyone
+        p
+          | We want to create a game for everyone, including those with
+          | disabilities. With help from the community, we plan to develop
+          | special interfaces crafted for them. 
+        p
+          | Ultimately, we want to give people like 
+          a(href="http://www.mirror.co.uk/news/uk-news/boy-11-says-first-words-96160") Jemil 
+          | and 
+          a(href="http://www.bbc.com/news/disability-35705489") James 
+          | the chance to play a game made for them. 
+
+      #development
+        h2 Development
+
+        h3 Free and open source software
+        p
+          | Hacker Experience 2 is a free and open source software being
+          | developed openly. This means the entire codebase that powers HE2
+          | is public. Users have the freedom to run, copy, distribute, study,
+          | change and improve the software.
+
+        h3 Let's build a game
+        p
+          | We welcome players and students to contribute to Hacker Experience
+          | 2. It's also a great opportunity for them to take the first step
+          | on programming.
+        p
+          | Having the opportunity to 
+          strong submit a small improvement 
+          | to a game that person actually plays can have a tremendous effect.
+          | Seeing the change being rolled out to others brings a great
+          | feeling that, we hope, will motivate further contributions.
+        p
+          | We believe this 
+          strong practical experience 
+          | will get more students interested in Computer Science, computer
+          | programming and open source projects. 
+
+      #history
+        h2 History
+        p
+          | Hacker Experience 2 is based on 
+          a(href="https://legacy.hackerexperience.com") Hacker Experience 1 (HE1)
+          | , released on September 2014. It currently has around 500,000
+          | players and an overall positive review.
+        p
+          | However, HE1 is Renato's first work, built while he was in
+          | college, and has several design flaws. It also has a simple
+          | text-based interface. Hacker Experience 2 was built to solve these
+          | issues and provide an even better game.
+
+      #team
+        h2 Team Members
+        
+        .team-member
+          .profile-img
+            img().img-responsive
+          .profile-bio
+            .member-name Renato Massaro
+            .member-role CTO &amp; Developer
+            .member-bio
+              p
+                | Creator of the Hacker Experience brand, Renato is a software
+                | developer and systems administrator.
+              p
+                | At work and on his free time, Renato loves messing around with
+                | distributed systems, operational systems, databases and
+                | theoretical computer science. 
+              p
+                | He is also a free software enthusiast and has spoken on some
+                | conferences in Brazil, including 
+                em Campus Party Brasil 
+                | and 
+                em Fórum Internacional de Software Livre
+                | .
+            .member-social
+              a(href="mailto:renato@hackerexperience.com")
+                .fa.fa-envelope.fa-2x
+              a(href="tel:+14158004943")
+                .fa.fa-phone.fa-2x
+              a(href="https://r.ena.to")
+                .fa.fa-user.fa-2x
+              a(href="https://fb.com/renato.massaro")
+                .fa.fa-facebook-square.fa-2x
+              a(href="https://twitter.com/RenatoMassaro")
+                .fa.fa-twitter.fa-2x
+      #featured
+        h2 Featured in
+        
+      #assets
+        h2 Assets
+        
+      #contact
+        h2 Contact us
+        .row
+          .col-xs-6.links
+            h3 General
+            a(href="#") contact@hackerexperience.com
+            a(href="tel:18444225953" title="Toll free") 1 844-HACKEREXP
+            | 105 N First St #429 - San Jose, CA
+
+            h3 Media enquiries
+            a(href="#") press@hackerexperience.com
+            a(href="tel:18444225953" title="Toll free") 1 844-HACKEREXP
+            a(href="tel:14158004943") 1 415-800-4943
+
+          .col-xs-6
+            h3 Links
+            .links
+              a(href="https://hackerexperience.com") Official website
+              a(href="https://leaks.hackerexperience.com") Blog
+              a(href="https://letsbuildagame.org") Let's build a game
+              a(href="#") Crowdfunding campaign
+
+            h3 Social
+            .socialite
+              a(href="#")
+                .fa.fa-facebook-square.fa-3x
+              a(href="#")
+                .fa.fa-twitter.fa-3x
+              a(href="#")
+                .fa.fa-google-plus.fa-3x
+              a(href="#")
+                .fa.fa-github.fa-3x

@@ -10,6 +10,7 @@ bower_filter = (type, component, relative_dir_path) ->
           "font-awesome/" + relative_dir_path["assets/stylesheets/".length..]
         when "font"
           "font-awesome/"
+    when "jquery" then ""
     else
       relative_dir_path
 
@@ -59,6 +60,11 @@ module.exports = (grunt) ->
             cwd: "tmp/bower/font"
             src: "**/*.{eot,woff,woff2,ttf,svg}"
             dest: "dist/assets/font"}]
+      js:
+        expand: true
+        cwd: "tmp/bower/js"
+        src: "**/*.js"
+        dest: "dist/assets/js/vendor"
     express:
       live:
         options:
@@ -128,25 +134,44 @@ module.exports = (grunt) ->
       options:
         grunt: true
       dev:
-        tasks: ["copy", "imagemin:dev", "sass:dev", "jade:dev"]
+        tasks: ["copy", "imagemin:dev", "sass:dev", "jade:dev", "uglify:dev"]
       prod:
-        tasks: ["copy", "imagemin:prod", "sass:prod", "jade:prod"]
+        tasks: ["copy", "imagemin:prod", "sass:prod", "jade:prod", "uglify:prod"]
+    uglify:
+      dev:
+        options:
+          preserveComments: "all"
+          beautify: false
+          mangle: false
+          sourceMap: true
+          sourceMapIncludeSources: true
+        files: x = [
+          {
+            "dist/assets/js/custom.js": ["src/js/custom_js/**/*.js"]}
+          {
+            expand: true
+            cwd: "src/js"
+            src: ["*.js"]
+            dest: "dist/assets/js"
+            ext: ".js"}]
+      prod:
+        options:
+          preserveComments: "some"
+          compress:
+            drop_console: true
+        files: x
     watch:
       options:
         spawn: false
-      bower:
-        files: ["bower.json"]
-        tasks: ["bower", "sass:dev", "uglify:vendor", "copy:font"]
-      font:
-        options: x
-        files: ["tmp/bower/font/**/*.{eot,woff,woff2,ttf,svg}", "src/font/**/*.{eot,woff,woff2,ttf,svg}"]
-        tasks: ["copy:font"]
       img:
         files: ["src/img/**/*.{png,jpg,jpeg,gif,svg}"]
         tasks: ["imagemin:dev"]
       jade:
         files: ["src/jade/**/*.jade", "src/jade/variables.json"]
         tasks: ["jade:dev"]
+      js:
+        files: ["src/js/**/*.js"]
+        tasks: ["uglify:dev"]
       sass:
         files: ["src/sass/**/*.scss"]
         tasks: ["sass:dev"]
@@ -162,6 +187,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-imagemin'
   grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-contrib-sass'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-express'
   grunt.loadNpmTasks 'grunt-parallel'
