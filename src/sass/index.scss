@@ -29,6 +29,10 @@ p strong {
   color: lighten($text-color, 5%);
 }
 
+.strong-link {
+  font-weight: 600;
+}
+
 %cool-divider {
   @include single-box-shadow(0, 4px, 6px, -4px, rgba(#000, 0.33));
   border-bottom: 1px solid rgba($cooltrast, 0.66);
