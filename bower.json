@@ -5,7 +5,8 @@
   "devDependencies": {
     "bootstrap-sass": "3.3.6",
     "font-awesome-sass": "4.5.0",
-    "jquery": "2.2.0"
+    "jquery": "2.2.0",
+    "lightbox2": "*"
   },
   "exportsOverride": {
     "bootstrap-sass": {
@@ -17,5 +18,9 @@
     },
     "jquery": {
       "js": "dist/jquery.min.js"
+    },
+    "lightbox2": {
+      "js": "dist/js/lightbox.min.js",
+      "img": "dist/images/**"
     },
     "*": {}}}

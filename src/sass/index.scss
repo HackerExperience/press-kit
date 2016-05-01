@@ -10,7 +10,7 @@
  */
 body {
   background-attachment: fixed;
-  background-image: url("https://cdn.hackerexperience.com/bg/bg3.png");
+  background-image: url("https://cdn.hackerexperience.com/bg/cities.jpg");
   background-size: cover;
 }
 
@@ -34,7 +34,7 @@ p strong {
 }
 
 %cool-divider {
-  @include single-box-shadow(0, 4px, 6px, -4px, rgba(#000, 0.33));
+  @include single-box-shadow(0, 8px, 4px, -8px, rgba(#000, 0.33));
   border-bottom: 1px solid rgba($cooltrast, 0.66);
   display: block;
 }
@@ -179,5 +179,19 @@ h2 {
 
   .fact {
     margin: 10px 0;
+  }
+}
+
+#assets {
+  .trailer-video-container {
+    padding: 16px;
+  }
+
+  .photo-gallery {
+    padding: 8px;
+
+    img {
+      padding: 8px;
+    }
   }
 }

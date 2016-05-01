@@ -11,6 +11,14 @@ bower_filter = (type, component, relative_dir_path) ->
         when "font"
           "font-awesome/"
     when "jquery" then ""
+    when "lightbox2"
+      switch type
+        when "js" then ""
+        when "css"
+          "lightbox/" + relative_dir_path["dist/css/".length..]
+        when "img"
+          "lightbox/" + relative_dir_path["dist/images/".length..]
+
     else
       relative_dir_path
 
@@ -47,7 +55,21 @@ module.exports = (grunt) ->
         src: "dist"
       bower:
         src: "tmp/bower"
+    compress:
+      prod:
+        options:
+          archive: "dist/release.tar"
+          mode: "tar"
+        files: [
+          expand: true
+          cwd: "dist"
+          src: ["**/**"]]
     copy:
+      css:
+        expand: true
+        cwd: "tmp/bower/css"
+        src: "**/*.css"
+        dest: "dist/assets/css"
       font:
         files: [
           {
@@ -75,10 +97,16 @@ module.exports = (grunt) ->
         options:
           optimizationLevel: 0
         files: x = [
-          expand: true
-          cwd: "src/img"
-          src: ["**/*.{png,jpg,jpeg,gif,svg}"]
-          dest: "dist/assets/img"]
+          {
+            expand: true
+            cwd: "src/img"
+            src: ["**/*.{png,jpg,jpeg,gif,svg}"]
+            dest: "dist/assets/img"}
+          {
+            expand: true
+            cwd: "tmp/bower/img"
+            src: ["**/*.{png,jpg,jpeg,gif,svg}"]
+            dest: "dist/assets/img"}]
       prod:
         options:
           optimizationLevel: 7
@@ -105,7 +133,10 @@ module.exports = (grunt) ->
           pretty: false
           compileDebug: false
           data: (dest, src) ->
-            data "prod"
+            (data = (env) ->
+              conf = grunt.file.readJSON "src/jade/variables.json"
+              conf.env = env
+              conf) "prod"
         files: x
     sass:
       dev:
@@ -183,6 +214,7 @@ module.exports = (grunt) ->
 
   grunt.loadNpmTasks 'grunt-bower-task'
   grunt.loadNpmTasks 'grunt-contrib-clean'
+  grunt.loadNpmTasks 'grunt-contrib-compress'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-imagemin'
   grunt.loadNpmTasks 'grunt-contrib-jade'
@@ -193,4 +225,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-parallel'
 
   grunt.registerTask "live", ["bower", "parallel:dev", "express:live", "watch"]
-  grunt.registerTask "release", ["clean", "bower", "parallel:prod"]
+  grunt.registerTask "release", ["clean", "bower", "parallel:prod", "compress"]
