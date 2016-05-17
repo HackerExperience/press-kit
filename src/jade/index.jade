@@ -3,11 +3,11 @@ include includes/metatags
 
 append styles
   +stylesheet("/assets/css/index.css")
-  //- +stylesheet("/assets/css/lightbox_editted.css")
+  +stylesheet("/assets/css/lightbox_editted.css")
 
 append scripts
-  //- +javascript("/assets/js/vendor/lightbox.min.js")
-  //- +javascript("/assets/js/index.js")
+  +javascript("/assets/js/vendor/lightbox.min.js")
+  +javascript("/assets/js/index.js")
 
 block content
   //- The first container is the real page container (used to adequate the page
@@ -164,8 +164,8 @@ block content
       #team
         include includes/index/team
 
-      //- #assets
-      //-   include includes/index/assets
+      #assets
+        include includes/index/assets
         
       #contact
         include includes/index/contact
