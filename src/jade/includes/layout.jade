@@ -11,8 +11,8 @@ html(lang="en")
     block styles
       if env == "prod"
         +stylesheet("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400")
-      +stylesheet("assets/css/vendor.css")
-      +stylesheet("assets/css/custom.css")
+      +stylesheet(baseUrl + "assets/css/vendor.css")
+      +stylesheet(baseUrl + "assets/css/custom.css")
 
   body: .body-container
     include header
